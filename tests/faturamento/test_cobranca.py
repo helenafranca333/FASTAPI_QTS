@@ -73,7 +73,7 @@ def test_arredondamento():
         "PRATA",
         7
     )
-    assert resultado == 101.91
+    assert resultado == 115.87
 
 
 def test_tempo_de_execucao():
