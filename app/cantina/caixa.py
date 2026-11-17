@@ -1,7 +1,7 @@
 from app.cantina.combo import calcular_desconto_combo
 from app.cantina.embalagem import calcular_taxa_embalagem
 
-def processar_vendas(
+def processar_venda(
     valor_bruto:float,
     quantidade_itens:int,
     tipo_cliente:str,
@@ -9,12 +9,13 @@ def processar_vendas(
 
 )->dict:
    if valor_bruto <= 0 or quantidade_itens <= 0:
-   return{
-    "sucessso": False,
-    "motivo": "dados de venda invalidos",
-    "total_final":0.0
-   }
-   taxa_desconto = calcular_desconto_combo(quantidade_itens,tipo_cliente):
+    return{
+        "sucesso": False,
+        "motivo": "dados de venda invalidos",
+        "total_final":0.0
+    }
+
+   taxa_desconto = calcular_desconto_combo(quantidade_itens,tipo_cliente)
    valor_desconto = round(valor_bruto* taxa_desconto,2)
    sub_total = valor_bruto - valor_desconto
    taxa_embalagem = calcular_taxa_embalagem(levar_viagem,quantidade_itens)
